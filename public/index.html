@@ -160,6 +160,32 @@
             text-shadow: 0 0 8px #39ff14cc;
             opacity: 0.85;
         }
+        .definiciones-hacker {
+            margin: 0;
+            padding: 0;
+        }
+        .definiciones-hacker dt {
+            color: #39ff14;
+            font-weight: bold;
+            font-family: 'Share Tech Mono', monospace;
+            margin-top: 0.7em;
+            margin-bottom: 0.1em;
+            font-size: 1.05em;
+        }
+        .definiciones-hacker dd {
+            margin: 0 0 0.5em 1.2em;
+            color: #baffc9;
+            font-size: 1em;
+        }
+        @media (max-width: 600px) {
+            .definiciones-hacker dd {
+                margin-left: 0.7em;
+                font-size: 0.97em;
+            }
+            .definiciones-hacker dt {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -183,9 +209,9 @@
         </ul>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#39ff14" stroke-width="2" fill="none"/><path d="M8 2h8v4H8z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> Herramientas más usadas</h3>
         <ul>
-            <li><b>White Hat:</b> <span class="tools">Nmap, Wireshark, Metasploit, Burp Suite, Nessus</span></li>
-            <li><b>Black Hat:</b> <span class="tools">Metasploit, Cobalt Strike, keyloggers, RATs, exploit kits</span></li>
-            <li><b>Grey Hat:</b> <span class="tools">Kali Linux, scripts personalizados, herramientas de ambos mundos</span></li>
+            <li><b>White Hat</b>: <span class="tools">Nmap, Wireshark, Metasploit, Burp Suite, Nessus</span></li>
+            <li><b>Black Hat</b>: <span class="tools">Metasploit, Cobalt Strike, keyloggers, RATs, exploit kits</span></li>
+            <li><b>Grey Hat</b>: <span class="tools">Kali Linux, scripts personalizados, herramientas de ambos mundos</span></li>
         </ul>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2l4 4-4 4-4-4 4-4zm0 16l4 4-4 4-4-4 4-4z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> ¿Cómo operan los hackers?</h3>
         <ul>
@@ -197,14 +223,20 @@
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3a7 7 0 110 14 7 7 0 010-14z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> Grupo de hackers más conocido</h3>
         <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3a7 7 0 110 14 7 7 0 010-14z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> <b>Anonymous</b>: Es el grupo de hackers más famoso a nivel mundial, conocido por sus ataques y protestas en defensa de la libertad de expresión y la justicia social.</p>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M3 12h18M12 3v18" stroke="#39ff14" stroke-width="2"/></svg> Conceptos clave en hacking</h3>
-        <ul>
-            <li><b>Vulnerabilidad:</b> Debilidad en un sistema que puede ser explotada.</li>
-            <li><b>Exploit:</b> Código o técnica que aprovecha una vulnerabilidad.</li>
-            <li><b>Phishing:</b> Engaño para obtener datos sensibles.</li>
-            <li><b>Ingeniería social:</b> Manipulación psicológica para obtener información o acceso.</li>
-            <li><b>Rootkit:</b> Software que oculta la presencia de malware.</li>
-            <li><b>Zero-day:</b> Vulnerabilidad desconocida por el fabricante y sin parche.</li>
-        </ul>
+        <dl class="definiciones-hacker">
+            <dt>Vulnerabilidad</dt>
+            <dd>Debilidad en un sistema que puede ser explotada.</dd>
+            <dt>Exploit</dt>
+            <dd>Código o técnica que aprovecha una vulnerabilidad.</dd>
+            <dt>Phishing</dt>
+            <dd>Engaño para obtener datos sensibles.</dd>
+            <dt>Ingeniería social</dt>
+            <dd>Manipulación psicológica para obtener información o acceso.</dd>
+            <dt>Rootkit</dt>
+            <dd>Software que oculta la presencia de malware.</dd>
+            <dt>Zero-day</dt>
+            <dd>Vulnerabilidad desconocida por el fabricante y sin parche.</dd>
+        </dl>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#39ff14" stroke-width="2"/><path d="M8 12l2 2 4-4" stroke="#39ff14" stroke-width="2"/></svg> Buenas prácticas de ciberseguridad</h3>
         <ul>
             <li>Usa contraseñas fuertes y únicas.</li>
@@ -215,21 +247,31 @@
             <li>Aprende a identificar intentos de phishing y fraudes.</li>
         </ul>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#39ff14" stroke-width="2"/><path d="M8 8h8M8 12h4" stroke="#39ff14" stroke-width="2"/></svg> Ejemplos de comandos útiles</h3>
-        <ul>
-            <li><b>Escaneo de red con Nmap:</b> <span class="tools">nmap -sS 192.168.1.0/24</span></li>
-            <li><b>Captura de paquetes con Wireshark:</b> <span class="tools">wireshark</span></li>
-            <li><b>Fuerza bruta con Hydra:</b> <span class="tools">hydra -l admin -P passwords.txt 192.168.1.10 ssh</span></li>
-            <li><b>Escaneo de vulnerabilidades con Nikto:</b> <span class="tools">nikto -h http://objetivo.com</span></li>
-            <li><b>Obtener información de un dominio:</b> <span class="tools">whois dominio.com</span></li>
-        </ul>
+        <dl class="definiciones-hacker">
+            <dt>Escaneo de red con Nmap</dt>
+            <dd><span class="tools">nmap -sS 192.168.1.0/24</span></dd>
+            <dt>Captura de paquetes con Wireshark</dt>
+            <dd><span class="tools">wireshark</span></dd>
+            <dt>Fuerza bruta con Hydra</dt>
+            <dd><span class="tools">hydra -l admin -P passwords.txt 192.168.1.10 ssh</span></dd>
+            <dt>Escaneo de vulnerabilidades con Nikto</dt>
+            <dd><span class="tools">nikto -h http://objetivo.com</span></dd>
+            <dt>Obtener información de un dominio</dt>
+            <dd><span class="tools">whois dominio.com</span></dd>
+        </dl>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="#39ff14" stroke-width="2"/><path d="M8 12l2 2 4-4" stroke="#39ff14" stroke-width="2"/></svg> Recursos y comunidades</h3>
-        <ul>
-            <li><a href="https://www.hackthebox.com/" target="_blank" class="tools">Hack The Box</a> - Laboratorios y retos de hacking.</li>
-            <li><a href="https://www.tryhackme.com/" target="_blank" class="tools">TryHackMe</a> - Aprendizaje interactivo de ciberseguridad.</li>
-            <li><a href="https://www.cybrary.it/" target="_blank" class="tools">Cybrary</a> - Cursos gratuitos y de pago.</li>
-            <li><a href="https://www.reddit.com/r/netsec/" target="_blank" class="tools">Reddit r/netsec</a> - Noticias y debates de seguridad.</li>
-            <li><a href="https://www.owasp.org/" target="_blank" class="tools">OWASP</a> - Buenas prácticas y proyectos de seguridad web.</li>
-        </ul>
+        <dl class="definiciones-hacker">
+            <dt><a href="https://www.hackthebox.com/" target="_blank" class="tools">Hack The Box</a></dt>
+            <dd>Laboratorios y retos de hacking.</dd>
+            <dt><a href="https://www.tryhackme.com/" target="_blank" class="tools">TryHackMe</a></dt>
+            <dd>Aprendizaje interactivo de ciberseguridad.</dd>
+            <dt><a href="https://www.cybrary.it/" target="_blank" class="tools">Cybrary</a></dt>
+            <dd>Cursos gratuitos y de pago.</dd>
+            <dt><a href="https://www.reddit.com/r/netsec/" target="_blank" class="tools">Reddit r/netsec</a></dt>
+            <dd>Noticias y debates de seguridad.</dd>
+            <dt><a href="https://www.owasp.org/" target="_blank" class="tools">OWASP</a></dt>
+            <dd>Buenas prácticas y proyectos de seguridad web.</dd>
+        </dl>
     </section>
     <footer class="footer-hacker">© 2025 Hacker Zone. Todos los derechos reservados.</footer>
     <script>
