@@ -229,6 +229,30 @@
                 margin: 2rem auto 0 auto;
             }
         }
+        .comenzar-hacking-btn-container {
+            display: flex;
+            justify-content: center;
+            margin: 2.2rem 0 1.2rem 0;
+        }
+        .comenzar-hacking-btn {
+            background: #181818;
+            color: #39ff14;
+            border: 2px solid #39ff14;
+            border-radius: 8px;
+            padding: 0.8rem 2.2rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            text-decoration: none;
+            letter-spacing: 2px;
+            box-shadow: 0 0 12px #39ff1444;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .comenzar-hacking-btn:hover {
+            background: #39ff14;
+            color: #181818;
+            box-shadow: 0 0 24px #39ff14cc;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +266,9 @@
         </div>
         <div class="hacker-anim-container" id="hacker-anim-wrapper" style="opacity:0; pointer-events:none; transition: opacity 1.5s;" onclick="window.open('https://thongmilletbrutally.com/c144ngsyv?key=b08681b58d4ed44b8aa82c48d6d97f76','_blank')" title="Haz click para más info">
             <span id="hacker-anim"></span>
+        </div>
+        <div class="comenzar-hacking-btn-container" id="comenzar-hacking-btn-container" style="opacity:0; pointer-events:none; transition: opacity 1s;">
+            <a href="#" class="comenzar-hacking-btn" id="comenzar-hacking-btn">Comenzar Hacking</a>
         </div>
     </div>
     <section class="info-hacking" id="info-hacking" style="opacity:0; pointer-events:none; transition: opacity 1s;">
@@ -295,19 +322,6 @@
             <li>Haz copias de seguridad frecuentes.</li>
             <li>Aprende a identificar intentos de phishing y fraudes.</li>
         </ul>
-        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#39ff14" stroke-width="2"/><path d="M8 8h8M8 12h4" stroke="#39ff14" stroke-width="2"/></svg> Ejemplos de comandos útiles</h3>
-        <dl class="definiciones-hacker">
-            <dt>Escaneo de red con Nmap</dt>
-            <dd><span class="tools">nmap -sS 192.168.1.0/24</span></dd>
-            <dt>Captura de paquetes con Wireshark</dt>
-            <dd><span class="tools">wireshark</span></dd>
-            <dt>Fuerza bruta con Hydra</dt>
-            <dd><span class="tools">hydra -l admin -P passwords.txt 192.168.1.10 ssh</span></dd>
-            <dt>Escaneo de vulnerabilidades con Nikto</dt>
-            <dd><span class="tools">nikto -h http://objetivo.com</span></dd>
-            <dt>Obtener información de un dominio</dt>
-            <dd><span class="tools">whois dominio.com</span></dd>
-        </dl>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="#39ff14" stroke-width="2"/><path d="M8 12l2 2 4-4" stroke="#39ff14" stroke-width="2"/></svg> Recursos y comunidades</h3>
         <dl class="definiciones-hacker">
             <dt><a href="https://www.hackthebox.com/" target="_blank" class="tools">Hack The Box</a></dt>
@@ -450,11 +464,14 @@
                     // Mostrar la sección informativa con animación
                     const info = document.getElementById('info-hacking');
                     const hackerAnimWrapper = document.getElementById('hacker-anim-wrapper');
+                    const btnContainer = document.getElementById('comenzar-hacking-btn-container');
                     
                     info.style.opacity = 1;
                     info.style.pointerEvents = 'auto';
                     hackerAnimWrapper.style.opacity = 1;
                     hackerAnimWrapper.style.pointerEvents = 'auto';
+                    btnContainer.style.opacity = 1;
+                    btnContainer.style.pointerEvents = 'auto';
                 }
             }
             showAccess();
@@ -555,6 +572,38 @@
             requestAnimationFrame(draw);
         }
         draw();
+    </script>
+    <script>
+        // Abrir dos anuncios y luego redirigir
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('comenzar-hacking-btn');
+            if(btn) {
+                // Estado de anuncios vistos
+                var anunciosVistos = parseInt(localStorage.getItem('anunciosVistosHacking') || '0');
+                function updateBtn() {
+                    if (anunciosVistos === 0) {
+                        btn.textContent = 'Comenzar Hacking';
+                    } else if (anunciosVistos === 1) {
+                        btn.textContent = 'Comenzar Hacking 1/2';
+                    } else if (anunciosVistos >= 2) {
+                        btn.textContent = 'Comenzar Hacking 2/2';
+                    }
+                }
+                updateBtn();
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (anunciosVistos < 2) {
+                        window.open('https://thongmilletbrutally.com/c144ngsyv?key=b08681b58d4ed44b8aa82c48d6d97f76', '_blank');
+                        anunciosVistos++;
+                        localStorage.setItem('anunciosVistosHacking', anunciosVistos);
+                        updateBtn();
+                    } else {
+                        localStorage.removeItem('anunciosVistosHacking');
+                        window.location.href = 'herramientas.html';
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html> 

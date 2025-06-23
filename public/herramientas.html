@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas de Hacking | Hacker Zone</title>
+    <link rel="icon" type="image/png" href="imagenes/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #181818;
+            color: #39ff14;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            min-height: 100vh;
+        }
+        #bg-anim {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem 1.5rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+        }
+        .logo-herr {
+            display: block;
+            margin: 0 auto 1.2rem auto;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #39ff14;
+            background: #111;
+            object-fit: cover;
+            filter: drop-shadow(0 0 12px #39ff14cc);
+        }
+        .tool-section {
+            background: rgba(0,0,0,0.92);
+            border: 2.5px solid #39ff14;
+            border-radius: 14px;
+            margin: 2.5rem auto 2rem auto;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 0 32px #39ff14aa, 0 0 8px #39ff1444;
+            position: relative;
+            z-index: 1;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            overflow-x: auto;
+            max-width: 420px;
+            width: 92%;
+            transition: box-shadow 0.2s, border 0.2s;
+        }
+        .tool-section:hover {
+            box-shadow: 0 0 48px #39ff14cc, 0 0 16px #39ff14bb;
+            border-color: #baffc9;
+        }
+        .tool-section h2 {
+            color: #39ff14;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .tool-section .grupo {
+            color: #baffc9;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .funcion {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .desc {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .instalacion {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .metodos {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .ejemplo {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .ventajas {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .limitaciones {
+            margin-bottom: 0.5rem;
+        }
+        .tool-section .enlace {
+            color: #39ff14;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+        .tool-section code {
+            background: #111;
+            color: #39ff14;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .volver {
+            display: block;
+            margin: 2.5rem auto 0 auto;
+            text-align: center;
+            color: #39ff14;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 1.5px solid #39ff14;
+            border-radius: 8px;
+            padding: 0.6rem 2.2rem;
+            background: #181818;
+            box-shadow: 0 0 12px #39ff1444;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .volver:hover {
+            background: #39ff14;
+            color: #181818;
+            box-shadow: 0 0 24px #39ff14cc;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+            }
+            .tool-section {
+                padding: 1.1rem 0.3rem;
+                width: 90vw;
+                max-width: 95vw;
+                border-radius: 10px;
+                margin: 1.5rem auto 1.5rem auto;
+            }
+        }
+        .tool-section pre, .tool-section code, .tool-section .enlace, .tool-section a {
+            word-break: break-all;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-anim"></canvas>
+    <div class="container">
+        <img src="imagenes/logo.png" alt="Logo Hacker Zone" class="logo-herr">
+        <h1>Herramientas de Hacking</h1>
+        <div class="tool-section">
+            <h2>Nmap</h2>
+            <div class="grupo"><b>Grupo:</b> White Hat, Grey Hat, Black Hat</div>
+            <div class="funcion"><b>Función:</b> Escaneo de redes y puertos, detección de servicios y sistemas operativos.</div>
+            <div class="desc"><b>Descripción:</b> Nmap es la herramienta más popular para el reconocimiento de redes. Permite descubrir hosts y servicios en una red, identificar sistemas operativos y detectar vulnerabilidades básicas.</div>
+            <div class="instalacion"><b>Instalación:</b> <code>sudo apt install nmap</code> (Linux) | <a href="https://nmap.org/download.html" target="_blank">Descargar para otros sistemas</a></div>
+            <div class="metodos"><b>Métodos famosos:</b> <code>nmap -A -T4 192.168.1.1</code> (detección avanzada), <code>nmap -sS 192.168.1.0/24</code> (escaneo sigiloso)</div>
+            <div class="ejemplo"><b>Ejemplo de salida:</b><br><pre>PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1
+80/tcp open  http    Apache httpd 2.4.29</pre></div>
+            <div class="ventajas"><b>Ventajas:</b> Rápido, flexible, soporta scripts NSE para automatizar tareas.</div>
+            <div class="limitaciones"><b>Limitaciones:</b> Puede ser detectado por firewalls y sistemas IDS/IPS.</div>
+            <div class="enlace"><a href="https://github.com/nmap/nmap" target="_blank">Repositorio oficial en GitHub</a> | <a href="https://nmap.org/book/" target="_blank">Documentación oficial</a></div>
+        </div>
+        <div class="tool-section">
+            <h2>Hydra</h2>
+            <div class="grupo"><b>Grupo:</b> Black Hat, Grey Hat, White Hat</div>
+            <div class="funcion"><b>Función:</b> Ataques de fuerza bruta a servicios de red (SSH, FTP, HTTP, etc.).</div>
+            <div class="desc"><b>Descripción:</b> THC-Hydra es una de las herramientas más rápidas y flexibles para realizar ataques de fuerza bruta a contraseñas en múltiples protocolos.</div>
+            <div class="instalacion"><b>Instalación:</b> <code>sudo apt install hydra</code> (Linux) | <a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Compilar desde GitHub</a></div>
+            <div class="metodos"><b>Métodos famosos:</b> <code>hydra -l admin -P passwords.txt 192.168.1.1 ssh</code> (fuerza bruta SSH)</div>
+            <div class="ejemplo"><b>Ejemplo de salida:</b><br><pre>[22][ssh] host: 192.168.1.1   login: admin   password: password123</pre></div>
+            <div class="ventajas"><b>Ventajas:</b> Soporta muchos protocolos, muy rápida, personalizable.</div>
+            <div class="limitaciones"><b>Limitaciones:</b> Puede ser bloqueada por sistemas de protección contra fuerza bruta.</div>
+            <div class="enlace"><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Repositorio oficial en GitHub</a> | <a href="https://sectools.org/tool/hydra/" target="_blank">Más info</a></div>
+        </div>
+        <div class="tool-section">
+            <h2>SQLmap</h2>
+            <div class="grupo"><b>Grupo:</b> Black Hat, Grey Hat, White Hat</div>
+            <div class="funcion"><b>Función:</b> Automatiza la detección y explotación de vulnerabilidades de inyección SQL.</div>
+            <div class="desc"><b>Descripción:</b> SQLmap es la herramienta más famosa para automatizar ataques de inyección SQL, permitiendo extraer bases de datos, usuarios y contraseñas de forma sencilla.</div>
+            <div class="instalacion"><b>Instalación:</b> <code>sudo apt install sqlmap</code> (Linux) | <a href="https://github.com/sqlmapproject/sqlmap" target="_blank">Descargar desde GitHub</a></div>
+            <div class="metodos"><b>Métodos famosos:</b> <code>sqlmap -u \"http://objetivo.com/vuln.php?id=1\" --dbs</code></div>
+            <div class="ejemplo"><b>Ejemplo de salida:</b><br><pre>[INFO] testing connection to the target URL
+[INFO] parameter 'id' is vulnerable
+[INFO] fetching database names
+available databases [2]:
+[*] information_schema
+[*] users</pre></div>
+            <div class="ventajas"><b>Ventajas:</b> Muy automatizada, soporta múltiples DBMS, fácil de usar.</div>
+            <div class="limitaciones"><b>Limitaciones:</b> Puede ser detectada por WAFs y sistemas de protección web.</div>
+            <div class="enlace"><a href="https://github.com/sqlmapproject/sqlmap" target="_blank">Repositorio oficial en GitHub</a> | <a href="https://sqlmap.org/" target="_blank">Web oficial</a></div>
+        </div>
+        <div class="tool-section">
+            <h2>Nikto</h2>
+            <div class="grupo"><b>Grupo:</b> White Hat, Grey Hat</div>
+            <div class="funcion"><b>Función:</b> Escaneo de vulnerabilidades en servidores web.</div>
+            <div class="desc"><b>Descripción:</b> Nikto es un escáner de servidores web que detecta archivos peligrosos, configuraciones inseguras y vulnerabilidades conocidas.</div>
+            <div class="instalacion"><b>Instalación:</b> <code>sudo apt install nikto</code> (Linux) | <a href="https://github.com/sullo/nikto" target="_blank">Descargar desde GitHub</a></div>
+            <div class="metodos"><b>Métodos famosos:</b> <code>nikto -h http://objetivo.com</code></div>
+            <div class="ejemplo"><b>Ejemplo de salida:</b><br><pre>+ Server: Apache/2.4.29 (Ubuntu)
++ /admin/: Admin login page found.
++ /phpinfo.php: PHP info file found.</pre></div>
+            <div class="ventajas"><b>Ventajas:</b> Fácil de usar, detecta muchas vulnerabilidades conocidas.</div>
+            <div class="limitaciones"><b>Limitaciones:</b> Puede generar mucho tráfico y ser detectado fácilmente.</div>
+            <div class="enlace"><a href="https://github.com/sullo/nikto" target="_blank">Repositorio oficial en GitHub</a> | <a href="https://cirt.net/Nikto2" target="_blank">Web oficial</a></div>
+        </div>
+        <div class="tool-section">
+            <h2>John the Ripper</h2>
+            <div class="grupo"><b>Grupo:</b> Black Hat, Grey Hat, White Hat</div>
+            <div class="funcion"><b>Función:</b> Cracking de contraseñas mediante diccionario o fuerza bruta.</div>
+            <div class="desc"><b>Descripción:</b> John the Ripper es una herramienta para descifrar contraseñas a partir de hashes, muy usada en auditorías de seguridad y CTFs.</div>
+            <div class="instalacion"><b>Instalación:</b> <code>sudo apt install john</code> (Linux) | <a href="https://github.com/openwall/john" target="_blank">Descargar desde GitHub</a></div>
+            <div class="metodos"><b>Métodos famosos:</b> <code>john --wordlist=rockyou.txt hashes.txt</code></div>
+            <div class="ejemplo"><b>Ejemplo de salida:</b><br><pre>Loaded 1 password hash (sha512crypt)
+password123      (root)
+1g 0:00:00:02 DONE</pre></div>
+            <div class="ventajas"><b>Ventajas:</b> Soporta muchos algoritmos, rápido, ampliamente documentado.</div>
+            <div class="limitaciones"><b>Limitaciones:</b> Puede requerir mucha CPU y memoria para hashes complejos.</div>
+            <div class="enlace"><a href="https://github.com/openwall/john" target="_blank">Repositorio oficial en GitHub</a> | <a href="https://www.openwall.com/john/" target="_blank">Web oficial</a></div>
+        </div>
+        <a href="index.html" class="volver">Volver al inicio</a>
+    </div>
+    <script>
+    // Animación de partículas y líneas verdes (igual que en index.html)
+    const canvas = document.getElementById('bg-anim');
+    const ctx = canvas.getContext('2d');
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+
+    function resizeCanvas() {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    // Partículas
+    const particles = [];
+    for(let i=0; i<60; i++) {
+        particles.push({
+            x: Math.random()*w,
+            y: Math.random()*h,
+            r: Math.random()*1.5+0.5,
+            dx: (Math.random()-0.5)*0.3,
+            dy: Math.random()*0.7+0.2
+        });
+    }
+
+    // Líneas verticales
+    const lines = [];
+    for(let i=0; i<20; i++) {
+        lines.push({
+            x: Math.random()*w,
+            y: Math.random()*h,
+            l: Math.random()*h*0.5+100,
+            speed: Math.random()*1+0.5
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0,0,w,h);
+        // Líneas
+        ctx.save();
+        ctx.globalAlpha = 0.18;
+        for(const line of lines) {
+            ctx.beginPath();
+            ctx.strokeStyle = '#39ff14';
+            ctx.shadowColor = '#39ff14';
+            ctx.shadowBlur = 10;
+            ctx.moveTo(line.x, line.y);
+            ctx.lineTo(line.x, line.y+line.l);
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            line.y += line.speed;
+            if(line.y > h) {
+                line.y = -line.l;
+                line.x = Math.random()*w;
+            }
+        }
+        ctx.restore();
+        // Partículas
+        ctx.save();
+        ctx.globalAlpha = 0.25;
+        for(const p of particles) {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+            ctx.fillStyle = '#39ff14';
+            ctx.shadowColor = '#39ff14';
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if(p.y > h) {
+                p.y = -p.r;
+                p.x = Math.random()*w;
+            }
+            if(p.x < 0) p.x = w;
+            if(p.x > w) p.x = 0;
+        }
+        ctx.restore();
+        requestAnimationFrame(draw);
+    }
+    draw();
+
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+    </script>
+</body>
+</html> 
