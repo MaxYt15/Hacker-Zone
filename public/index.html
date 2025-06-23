@@ -201,6 +201,34 @@
                 justify-content: center;
             }
         }
+        .section-with-anim {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .section-with-anim .definiciones-hacker {
+            flex: 1;
+        }
+        .hacker-anim-container {
+            width: 280px;
+            min-height: 150px;
+            background: #000;
+            border: 1px solid #39ff1455;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8em;
+            color: #39ff14;
+            white-space: pre-wrap;
+            box-shadow: 0 0 15px #39ff1433;
+            margin: 2.5rem auto 0 auto;
+        }
+        @media (max-width: 768px) {
+            .hacker-anim-container {
+                width: 90%;
+                margin: 2rem auto 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -212,16 +240,22 @@
         <div class="terminal">
             <span id="typewriter"></span><span class="cursor"></span>
         </div>
+        <div class="hacker-anim-container" id="hacker-anim-wrapper" style="opacity:0; pointer-events:none; transition: opacity 1.5s;">
+            <span id="hacker-anim"></span>
+        </div>
     </div>
     <section class="info-hacking" id="info-hacking" style="opacity:0; pointer-events:none; transition: opacity 1s;">
         <h2><svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2L2 7v2c0 5.25 3.75 10.74 10 13 6.25-2.26 10-7.75 10-13V7L12 2z" stroke="#39ff14" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#39ff14" stroke-width="2" fill="none"/></svg> ¿Qué es el hacking?</h2>
         <p>El hacking es el conjunto de técnicas y conocimientos usados para explorar, modificar o vulnerar sistemas informáticos y redes. No siempre tiene fines maliciosos. Los hackers pueden buscar vulnerabilidades, aprender sobre sistemas, proteger infraestructuras o, en el caso de los maliciosos, obtener acceso no autorizado.</p>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3a7 7 0 110 14 7 7 0 010-14z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> Tipos de hackers</h3>
-        <ul>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#39ff14" stroke-width="2" fill="none"/></svg> <b>White Hat</b>: Hackers éticos que ayudan a mejorar la seguridad.</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#39ff14" stroke-width="2" fill="none"/><path d="M7 17l10-10" stroke="#39ff14" stroke-width="2"/></svg> <b>Black Hat</b>: Hackers maliciosos que vulneran sistemas para beneficio propio.</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#39ff14" stroke-width="2" fill="none"/><path d="M12 2v20" stroke="#39ff14" stroke-width="2"/></svg> <b>Grey Hat</b>: Hackers que actúan en ambos lados, a veces éticos y a veces no.</li>
-        </ul>
+        <dl class="definiciones-hacker">
+            <dt>White Hat</dt>
+            <dd>Hackers éticos que ayudan a mejorar la seguridad.</dd>
+            <dt>Black Hat</dt>
+            <dd>Hackers maliciosos que vulneran sistemas para beneficio propio.</dd>
+            <dt>Grey Hat</dt>
+            <dd>Hackers que actúan en ambos lados, a veces éticos y a veces no.</dd>
+        </dl>
         <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#39ff14" stroke-width="2" fill="none"/><path d="M8 2h8v4H8z" stroke="#39ff14" stroke-width="2" fill="none"/></svg> Herramientas más usadas</h3>
         <ul>
             <li><b>White Hat</b>: <span class="tools">Nmap, Wireshark, Metasploit, Burp Suite, Nessus</span></li>
@@ -367,6 +401,76 @@
     </section>
     <div id="container-d61d3d51ae8fe3aefefeeb399f7c133a"></div>
     <footer class="footer-hacker">© 2025 Hacker Zone. Todos los derechos reservados.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                strings: [
+                    'nmap -A -T4 127.0.0.1\\n\\nStarting Nmap 7.80 ( https://nmap.org )\\nNmap scan report for localhost (127.0.0.1)\\nHost is up (0.001s latency).\\nNot shown: 998 closed ports\\nPORT      STATE SERVICE VERSION\\n22/tcp    open  ssh     OpenSSH 7.6p1\\n80/tcp    open  http    Apache httpd 2.4.29\\n\\nNmap done: 1 IP address (1 host up) scanned in 2.21 seconds^1000',
+                    'hydra -l admin -P /wordlists/rockyou.txt 192.168.1.1 ftp\\n\\nHydra v9.1 (c) 2020 by van Hauser/THC\\nHydra is starting...\\n[DATA] max 16 tasks running\\n[STATUS] 4500 items tested\\n[STATUS] 85% done\\n[220] ftp: successful login\\n[SUCCESS] host: 192.168.1.1 login: admin password: password123\\n\\n1 of 1 target successfully completed, 1 valid password found^1000',
+                    'sqlmap -u "http://testphp.vulnweb.com/listproducts.php?cat=1" --dbs\\n\\nsqlmap/1.5.4#stable\\n[INFO] testing connection to the target URL\\n[INFO] testing for SQL injection\\n[INFO] parameter \\\'cat\\\' is vulnerable\\n[INFO] fetching database names\\navailable databases [5]:\\n[*] information_schema\\n[*] acuart\\n[*] mysql\\n[*] performance_schema\\n[*] test\\n\\n[INFO] sqlmap finished^1000',
+                    'nikto -h http://example.com\\n\\n- Nikto v2.1.6\\n- Target IP: 93.184.216.34\\n- Target Hostname: example.com\\n- Target Port: 80\\n- Start Time: 2025-06-22 17:00:00\\n+ Server: ECS (sjc/4E5D)\\n+ /: The X-XSS-Protection header is not defined.\\n+ /: Uncommon header \\\'x-cache\\\' found.\\n+ /index.html: Standard file found.\\n+ 65535 requests: 0 error(s) and 3 item(s) reported on remote host\\n- End Time: 2025-06-22 17:00:25 (25s)^1000',
+                    'john --wordlist=/usr/share/wordlists/fasttrack.txt hashes.txt\\n\\nUsing default input encoding: UTF-8\\nLoaded 1 password hash (sha512, 512/512 AVX2 [SHA512 256x2-256x1])\\nCost 1 (iteration count) is 5000 for all loaded hashes\\nWill run 8 processing threads\\nPress \\\'q\\\' or Ctrl-C to abort\\n\\npassword123      (root)\\n\\n1g 0:00:00:02 DONE (2025-06-22 17:05) 0.45g/s\\nSession completed^1000'
+                ],
+                typeSpeed: 25,
+                backSpeed: 10,
+                loop: true,
+                smartBackspace: false
+            };
+            var typed = new Typed('#hacker-anim', options);
+        });
+    </script>
+    <script>
+        const text = 'Bienvenido a la zona de hacking.\nAcceso restringido.\nIniciando conexión...';
+        let i = 0;
+        let finished = false;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById('typewriter').innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                // Esperar un momento y mostrar 'Acceso permitido'
+                setTimeout(() => {
+                    accesoPermitidoAnim();
+                }, 900);
+            }
+        }
+        function accesoPermitidoAnim() {
+            const typewriter = document.getElementById('typewriter');
+            typewriter.innerHTML += '<br>';
+            let msg = 'Acceso permitido';
+            let j = 0;
+            function showAccess() {
+                if (j < msg.length) {
+                    typewriter.innerHTML += msg.charAt(j);
+                    j++;
+                    setTimeout(showAccess, 60);
+                } else {
+                    // Mostrar la sección informativa con animación
+                    const info = document.getElementById('info-hacking');
+                    const hackerAnimWrapper = document.getElementById('hacker-anim-wrapper');
+                    
+                    info.style.opacity = 1;
+                    info.style.pointerEvents = 'auto';
+                    hackerAnimWrapper.style.opacity = 1;
+                    hackerAnimWrapper.style.pointerEvents = 'auto';
+                }
+            }
+            showAccess();
+        }
+        window.onload = typeWriter;
+    </script>
+    <script>
+        function scrollToInfo() {
+            document.getElementById('info-hacking').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
     <script>
         // Animación de partículas y líneas verdes
         const canvas = document.getElementById('bg-anim');
@@ -451,53 +555,6 @@
             requestAnimationFrame(draw);
         }
         draw();
-    </script>
-    <script>
-        const text = 'Bienvenido a la zona de hacking.\nAcceso restringido.\nIniciando conexión...';
-        let i = 0;
-        let finished = false;
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById('typewriter').innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            } else {
-                // Esperar un momento y mostrar 'Acceso permitido'
-                setTimeout(() => {
-                    accesoPermitidoAnim();
-                }, 900);
-            }
-        }
-        function accesoPermitidoAnim() {
-            const typewriter = document.getElementById('typewriter');
-            typewriter.innerHTML += '<br>';
-            let msg = 'Acceso permitido';
-            let j = 0;
-            function showAccess() {
-                if (j < msg.length) {
-                    typewriter.innerHTML += msg.charAt(j);
-                    j++;
-                    setTimeout(showAccess, 60);
-                } else {
-                    // Mostrar la sección informativa con animación
-                    const info = document.getElementById('info-hacking');
-                    info.style.opacity = 1;
-                    info.style.pointerEvents = 'auto';
-                }
-            }
-            showAccess();
-        }
-        window.onload = typeWriter;
-    </script>
-    <script>
-        function scrollToInfo() {
-            document.getElementById('info-hacking').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
-    <script>
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
     </script>
 </body>
 </html> 
